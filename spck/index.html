@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾Thiên nhiên kỳ thú</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+    <style>
+        .navbar .dropdown-toggle {
+            color: white;
+            background-color: #198754;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+        }
+        .navbar .dropdown-menu{
+            color:white;
+        }
+        .header{
+            background-color: rgb(74, 13, 13);
+            color:white;
+            padding:20px;
+        }
+        .animal-list{
+            background-color: #198754;
+            color: #fff;
+            padding: 40px;
+        }
+        .animal-list h2{
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 34px;
+            font-weight: bold;
+        }
+        .animal-group{
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        .animal-group h3{
+            width: 100%;
+            color: #ffe082;
+            border-left: 6px solid #ffc107;
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+        .card{
+            width: 280px;
+            border: none;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #333;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            height: 440px;
+        }
+        .card a{
+            margin-bottom:10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .card img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 12px;
+        }
+        .card-text{
+            padding: 15px;
+        }
+        .card-text h4{
+            margin-bottom: 5px;
+            color: #198754;
+        }
+        .contact-card{
+            color: white;
+            margin: 50px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 10px 30px rgba(0,0,0,.15);
+        }
+        .feedback{
+            width:auto;
+        }
+        .footer {
+            color:white;
+        }
+        .footer a{
+            text-decoration: none;
+            color: white;
+        }
+        .footer a:hover{
+            color: #ffc107;
+        }
+        .navbar button{
+            color:white;
+        }
+        .navbar .btn-outline-success{
+            color: white;
+        }
+        .dropdown-item{
+            color:white
+        }
+    </style>
+<body>
+    <!-- 1.Navbar -->
+    <div class="navbar navbar navbar-expand-lg bg-success sticky-top data-bs-toggle data-bs-target ">
+        <div class="container-fluid">
+            <!-- Tên web(logo) -->
+            <div>
+                <h4 style="color: white;" class="fw-semibold"><img src="img/icon_web.png" alt="Icon" width="50px">Thiên nhiên kỳ thú</h4>             
+            </div>
+            <!-- Nút toggle navbar -->
+            <div class="navbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#list-navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Nút trong toggler -->
+            <div id="list-navbar" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+
+                    <form class="d-flex" role="search">
+                        <input style="margin-left: 10px;" class="form-control me-2" type="search" placeholder="🔍Tìm động vật..." aria-label="Search"/>
+                        <button class="btn btn-warning" type="submit">Tìm</button>
+                    </form>
+
+                    <li class="test navbar-item">
+                        <a class="navbar-link item btn btn-success" style="margin-left: 10px;" href="#">🏠Trang chủ</a>
+                    </li>
+
+                    <li class="test navbar-item">
+                        <a class="navbar-link item btn btn-success" href="#about">📖Giới thiệu</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle btn btn-success animal-dropdown"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            🦁Động vật
+                        </button>
+
+                    <ul class="dropdown-menu bg-success">
+                        <li>
+                            <a class="dropdown-item" href="#mammal">🦁Động vật có vú</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#fish">🐟Cá</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#bird">🐦Chim</a>
+                        </li>
+                    </ul>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a class="navbar-link item btn btn-success" style="margin-right:10px" href="#contact">📞Liên hệ</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <div class="btn-group">
+                            <a class="navbar-link item btn btn-outline-light" style="margin-right: 5px;" href="/spck/login.html">Đăng nhập</a>
+                            <a class="navbar-link item btn btn-primary" style="margin-right:10px" href="/spck/register.html">Đăng ký</a>
+                        </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+     </div>
+    <!-- 2.Header -->
+    <header>
+        <div id="about" class="header text-center">
+            <h1 class="fw-semibold">Trải nghiệm Thiên Nhiên Kỳ Thú</h1>
+            <p style="color: rgba(255,255,255,0.7);">Thiên Nhiên Kỳ Thú là nơi cung cấp những thông tin thú vị và bổ ích về thế giới động vật.
+                Thiên Nhiên Kỳ Thú giúp người dùng dễ dàng khám phá nhiều loài động vật khác nhau. 
+                Mỗi loài được thể hiện qua những hình ảnh sống động, đặc điểm nổi bật và môi trường sống thú vị.
+            </p>
+            <a class="btn btn-warning fw-semibold" href="#mammal">🔍Khám phá ngay</a>
+        </div>
+    </header>
+    <!-- 3.About -->
+    <div class="about my-5 mx-5" >
+        <h2 class="text-center text-success fw-bold mb-4">Giới thiệu về Thiên nhiên kỳ thú</h2>
+        <p>
+            🦁 Thiên nhiên kỳ thú là một website giới thiệu thông tin về thế giới động vật,
+             giúp người dùng dễ dàng khám phá và tìm hiểu về nhiều loài động vật khác nhau.
+        </p>
+
+        <p>
+            🌿 Website cung cấp những thông tin cơ bản về đặc điểm, môi trường sống và những điều thú vị của từng loài.
+             Các loài động vật được phân chia thành nhiều nhóm giúp người dùng dễ dàng tìm kiếm và khám phá.
+        </p>
+
+        <p>
+            🌎 Thiên nhiên kỳ thú mong muốn mang đến một không gian học tập thú vị,
+             trực quan và gần gũi với thiên nhiên, đồng thời nâng cao ý thức bảo vệ động vật và môi trường sống.
+        </p>
+    </div>
+    <!-- 4.Animal list -->
+    <div class="animal-list" id="mammal">
+        <h2 class="text-white" data-aos="fade-down" data-aos-duration="1600">Một số nhóm loài động vật</h2>
+        <div class="animal-group">
+            <h3 class="fw-semibold mx-5" data-aos="fade-right" data-aos-duration="1600">Động vật có vú</h3>
+        
+        <div data-aos="fade-up" data-aos-duration="1500">    
+            <div class="card" >
+                <img class="rounded-top" src="img/lion.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Sư tử</h4>
+                    <p>
+                        Sư tử được mệnh danh là "Chúa tể sơn lâm". Chúng sống theo bầy đàn,
+                        chủ yếu ở các đồng cỏ châu Phi.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="mammals/lion.html">Xem chi tiết</a>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="1900">
+            <div class="card">
+                <img class="rounded-top" src="img/elephant.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Voi</h4>
+                    <p>
+                        Là một loài thuộc nhóm động vật có vú lớn nhất trên cạn,
+                        với một chiếc vòi dài linh hoạt và có tập tính xã hội rất trật tự.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="mammals/elephant.html">Xem chi tiết</a>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2300" >
+            <div class="card">
+                <img class="rounded-top" src="img/kangraroo.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold rounded-top">Kangraroo (Chuột túi)</h4>
+                    <p>
+                        Chuột túi là loài động vật có vú đặc trưng của Australia, nổi bật với đôi chân sau khỏe và chiếc đuôi dài.
+                        Chúng thường ăn cỏ, lá cây cùng các loại thực vật. 
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="mammals/kangraroo.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+        <div data-aos="fade-up" data-aos-duration="2700">
+            <div class="card">
+                <img class="rounded-top" src="img/sheep.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cừu</h4>
+                    <p>
+                        Là một loài thuộc nhóm động vật có vú lớn nhất trên cạn,
+                        với một chiếc vòi dài linh hoạt và có tập tính xã hội rất trật tự.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="mammals/sheep.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+            </div>
+
+            <div class="animal-group">
+                <h3 class="mx-5 mt-5 fw-semibold" id="fish" data-aos="fade-right" data-aos-duration="1600">Cá</h3>
+
+        <div data-aos="fade-up" data-aos-duration="1500">   
+            <div class="card">
+                <img class="rounded-top" src="img/sawfish.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cá kiếm</h4>
+                    <p style="overflow: hidden;">
+                        Cá kiếm là loài cá biển lớn, nổi bật với chiếc mõm dài và nhọn giống như một thanh kiếm.
+                        Chúng sống chủ yếu ở vùng biển ấm và thường săn các loài cá nhỏ, mực.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="fish/sawfish.html">Xem chi tiết</a>
+            </div>
+        </div> 
+
+        <div data-aos="fade-up" data-aos-duration="1900">
+            <div class="card">
+                <img class="rounded-top" src="img/pufferfish.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cá nóc</h4>
+                    <p style="overflow: hidden;">
+                        Cá nóc là loài cá có thân hình đặc biệt, có khả năng phồng to cơ thể khi cảm thấy bị đe dọa.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="fish/pufferfish.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+        <div data-aos="fade-up" data-aos-duration="2300">
+            <div class="card">
+                <img class="rounded-top" src="img/shark.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cá mập</h4>
+                    <p>
+                        Cá mập có thân hình mạnh mẽ, hàm răng sắc bén và bơi rất nhanh.
+                        Chúng có vai trò trong việc duy trì cân bằng hệ sinh thái biển.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="fish/shark.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+            <div data-aos="fade-up" data-aos-duration="2700">
+            <div class="card">
+                <img class="rounded-top" src="img/salmon.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cá hồi</h4>
+                    <p>
+                        Cá hồi sống ở vùng nước lạnh, với khả năng bơi ngược dòng để sinh sản. 
+                        Chúng có thân hình thon dài, giàu dinh dưỡng.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="fish/salmon.html">Xem chi tiết</a>
+            </div>
+            </div>    
+
+            </div>
+
+            <div class="animal-group">
+                <h3 class="mt-5 fw-semibold mx-5" id="bird" data-aos="fade-right" data-aos-duration="1600">Chim</h3>
+
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <div class="card">
+                <img class="rounded-top" src="img/penguin.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Chim cánh cụt</h4>
+                    <p>
+                        Chim cánh cụt là loài chim không biết bay, cơ thể phủ lớp lông dày để giữ ấm.
+                        Chúng sống ở Nam bán cầu và ăn cá, mực và sinh vật nhỏ.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="bird/penguin.html">Xem chi tiết</a>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="1900">
+            <div class="card">
+                <img class="rounded-top" src="img/peacock.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Chim công</h4>
+                    <p>
+                        Chim công nổi bật với bộ lông sặc sỡ và chiếc đuôi dài, đặc biệt là ở chim đực.
+                        Chúng sống ở rừng và đồng cỏ, ăn hạt, quả, côn trùng và các loài thực vật khác.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="bird/peacock.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+        <div data-aos="fade-up" data-aos-duration="2300">
+            <div class="card">
+                <img class="rounded-top" src="img/eagle.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Chim đại bàng</h4>
+                    <p>
+                        Đại bàng là loài chim săn mồi mạnh mẽ, nổi bật với đôi cánh rộng, móng vuốt sắc bén và thị lực rất tốt.
+                        Chúng làm tổ trên núi hoặc cây cao và săn các loài cá, chim,....
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="bird/eagle.html">Xem chi tiết</a>
+            </div>
+        </div>    
+
+        <!-- <div data-aos="fade-up" data-aos-duration="2700">   
+            <div class="card">
+                <img class="rounded-top" src="img/owl.jfif" alt="">
+                <div class="card-text">
+                    <h4 class="fw-semibold">Cú mèo</h4>
+                    <p>
+                        Cú mèo là một loài chim chuyên hoạt động về đêm.
+                         Chúng có khả năng nhìn trong bóng tối tốt giúp chúng có thể săn trong đêm.
+                    </p>
+                </div>
+                <a class="btn btn-outline-success mt-auto" href="bird/owl.html">Xem chi tiết</a>
+            </div> 
+        </div> -->
+            </div> 
+        </div>
+
+    <!-- 5.Contact -->
+    <div class="contact" id="contact">
+        <h3 class="text-success text-center mt-4 fw-semibold">📞Liên hệ với chúng tôi</h3>
+        <div class="contact-card bg-success">
+            
+            <h5>🌿 Thiên nhiên kỳ thú</h5>
+            <p>📫 Email: thiennhienkythu@gmail.com</p>
+            <p>☎️ Số điện thoại: 0123 456 789</p>
+            <p>📍 Địa chỉ: Thành phố Hồ Chí Minh</p>
+            <p></p>
+            <p>Nếu như bạn có câu hỏi hoặc đóng góp thông tin các loài động vật. Hãy liên hệ với chúng tôi!</p>
+        </div>
+    </div>
+
+    <!-- 6.Feedback -->
+    <div style="margin-left:50px;margin-right: 50px;">
+        <div class="feedback shadow">
+            <div class="bg-success text-white p-2">
+                <h3 class="fw-semibold">📝Gửi Feedback</h3>
+            </div>
+
+            <div style="margin: 10px;">
+                <label for="form-label">Họ và tên</label>
+                <input type="text" class="form-control" placeholder="Nhập họ tên" required>
+                
+                <label for="form-label">Email</label>
+                <input type="text" class="form-control" placeholder="example@gmail.com" required>
+
+                <label for="form-label">Đánh giá</label>
+                <select class="form-select">
+                    <option>Rất hài lòng</option>
+                    <option>Hài lòng</option>
+                    <option>Bình thường</option>
+                    <option>Không hài lòng</option>
+                </select> 
+
+                <label for="form-label">Nội dung</label>
+                <textarea rows="5" class="form-control" placeholder="Nhập nội dung góp ý của bạn..." required></textarea>
+                <button type="submit" class="btn btn-success mt-2 mb-2">📩Gửi</button>
+                <button type="reset" class="btn btn-secondary mt-2 mb-2">🔁Reset</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- 7.Footer -->
+    <footer class="footer">
+        <div class="footer bg-success text-center p-4">
+            <img src="img/icon_web.png" alt="" width="50px">
+            <h5 class="fw-semibold">Thiên nhiên kỳ thú</h5>
+            <p>Khám phá thế giới động vật và thiên nhiên quanh chúng ta.</p>
+            <p>©2026 Thiên nhiên kỳ thú. All rights reserved.</p>
+            <div class="mt-3">
+                <a class="link-warning" href="#">🏠Trang chủ</a>
+                <span>|</span>
+                <a class="link-warning" href="#about">📖Giới thiệu</a>
+                <span>|</span>
+                <a class="link-warning" href="#mammal">🦁Động vật</a>
+                <span>|</span>
+                <a class="link-warning" href="#contact">📞Liên hệ</a>
+            </div>
+        </div>
+    </footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
